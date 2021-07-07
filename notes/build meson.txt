@@ -1,0 +1,29 @@
+#https://mesonbuild.com/Quick-guide.html
+
+sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+
+sudo pip3 install meson
+
+git clone https://github.com/mesonbuild/meson.git
+
+python3 ./meson/meson.py
+
+
+
+
+
+
+
+
+#lol just
+
+
+sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+
+sudo apt-get remove meson
+
+
+sudo pip3 install --upgrade meson
+

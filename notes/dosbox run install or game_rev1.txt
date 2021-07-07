@@ -1,0 +1,46 @@
+mkdir DOSGAMES
+mkdir DOSGAMES/CYCLONE
+
+MOUNT C ./DOSGAMES
+
+IMGMOUNT D CYCLONES01.iso -t iso
+
+D:
+
+INSTALL.BAT
+
+EXIT
+
+
+
+
+
+
+
+
+C:
+cd CYCLONE
+CYCLONES
+
+
+
+C:
+cd CYCLONE
+DEBUG CYCLONE
+
+
+
+
+C:
+cd CYCLONE
+DEBUG CYCLONE 8335791
+
+
+
+
+
+CYCLONE 8335791 -DE -L1 -W1 -A1
+
+
+
+dosbox -c "echo hello"

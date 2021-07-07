@@ -1,0 +1,15 @@
+https://unix.stackexchange.com/questions/29671/how-can-i-convert-a-cue-bin-with-cdr-tracks-image-into-a-single-iso-file
+
+sudo apt install -y bchunk
+
+#bchunk IMAGE.bin IMAGE.cue IMAGE.iso
+
+#bchunk -s -w IMAGE.bin IMAGE.cue IMAGE
+
+#bin2iso <cuefile>
+
+#bad
+#bchunk -s -w CYCLONES.bin CYCLONES.cue CYCLONES
+
+#good
+bchunk -w CYCLONES.bin CYCLONES.cue CYCLONES

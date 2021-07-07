@@ -1,0 +1,147 @@
+https://github.com/dosbox-staging/dosbox-staging
+
+
+
+
+
+
+# Debian, Ubuntu
+sudo apt install ccache build-essential meson libasound2-dev libpng-dev \
+                 libsdl2-dev libsdl2-net-dev libopusfile-dev libfluidsynth-dev
+
+
+git clone https://github.com/dosbox-staging/dosbox-staging.git
+cd dosbox-staging
+
+python3 ../meson/meson.py setup -Dbuildtype=release -Denable_debugger=heavy build
+
+
+python3 ../meson/meson.py compile -C build
+python3 ../meson/meson.py test -C build
+
+mkdir ../dsout
+
+
+#doesn't work. not copying libs  
+
+#DESTDIR=../dsout python3 ../meson/meson.py install -C build
+#since were entering build, we need to go up two levels
+DESTDIR=../../dsout python3 ../meson/meson.py install -C build
+
+#sudo ../meson/meson.py install -C build
+
+
+
+
+
+
+-Ddefault_library=static
+python3 ../meson/meson.py setup --wipe -Dbuildtype=release -Ddefault_library=static -Denable_debugger=heavy build
+
+
+
+
+
+python3 ../meson/meson.py compile -C build
+python3 ../meson/meson.py test -C build
+
+
+ sudo python3 ../meson/meson.py install -C build
+dosbox
+#works
+
+
+
+
+
+
+#DESTDIR=$(readlink -f ../dsout) meson install -C build
+
+
+meson setup -Dbuildtype=release build
+ninja -C build
+./build/dosbox
+
+
+To see all of Meson's setup options, run:
+
+meson configure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://mesonbuild.com/Quick-guide.html
+
+sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+
+sudo pip3 install meson
+
+
+
+cd ..
+andrew@DESKTOP-NTQJ32B:/mnt/e/tmp/builddb$ git clone https://github.com/mesonbuild/meson.git
+
+
+
+
+python3 ./meson/meson.py
+
+
+
+
+
+
+
+
+
+
+python3 ../meson/meson.py setup -Dbuildtype=release build
+
+
+
+python3 ../meson/meson.py configure
+
+
+
+
+
+-Denable_debugger=heavy
+
+
+
+python3 ../meson/meson.py setup  --wipe build    
+
+
+
+python3 ../meson/meson.py setup  --wipe -Dbuildtype=release -Denable_debugger=heavy build
+
+
+
+
+
+
+
+
+
+
+
+                                                            rebuilding with a newer version of meson.
+andrew@DESKTOP-NTQJ32B:/mnt/e/tmp/builddb/dosbox-staging$ python3 ../meson/meson.py setup  --wipe -Dbuildtype=release -Denable_debugger=heavy build
+
+DESTDIR=/mnt/e/tmp/builddb/dbout/  python3 ../meson/meson.py  builddir --wipe -Dbuildtype=release -Denable_debugger=heavy
+
+
+
+ DESTDIR=/mnt/e/tmp/builddb/dbout/   python3 ../meson/meson.py install -C builddir

@@ -1,0 +1,34 @@
+grep "int..21" LOGCPU.TXT
+
+
+
+https://stackoverflow.com/questions/274894/monitoring-file-access-of-an-old-dos-game
+
+
+FCB-oriented functions:
+
+INT 21h, AH=14h (sequential read)
+INT 21h, AH=21h (random read)
+INT 21h, AH=27h (random block read, à la fread())
+Handle-oriented functions:
+
+INT 21h, AH=3Fh (sequential read)
+INT 21h, AH=42h (seek)
+
+
+
+http://spike.scu.edu.au/~barry/interrupts.html#ah42
+
+
+
+
+
+
+
+
+grep "int..21" LOGCPU.TXT | grep "EAX.....42..\|EAX.....3F.."
+
+
+
+
+https://github.com/johndoe31415/dosdebug

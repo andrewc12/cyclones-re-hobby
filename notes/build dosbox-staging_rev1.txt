@@ -1,0 +1,185 @@
+
+#get source
+apt source dosbox
+
+cd dosbox*/
+
+sudo apt build-dep dosbox
+
+#incase that didn't work
+#apt-cache depends dosbox
+#sudo apt install libsdl-net1.2-dev libsdl-sound1.2-dev libsdl1.2-dev automake-1.15
+
+#standard build command
+#debuild -b -uc -us
+
+
+
+#https://www.vogons.org/viewtopic.php?t=3944
+
+
+#./configure
+
+#enable cpu logging
+./configure --enable-debug=heavy
+
+
+
+
+make
+make install
+
+
+
+# these are weird compile commands 
+
+
+https://www.vogons.org/viewtopic.php?t=3944
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://github.com/dosbox-staging/dosbox-staging
+
+
+
+
+
+
+# Debian, Ubuntu
+sudo apt install ccache build-essential meson libasound2-dev libpng-dev \
+                 libsdl2-dev libsdl2-net-dev libopusfile-dev libfluidsynth-dev
+
+
+git clone https://github.com/dosbox-staging/dosbox-staging.git
+cd dosbox-staging
+meson setup -Dbuildtype=release build
+ninja -C build
+./build/dosbox
+
+
+To see all of Meson's setup options, run:
+
+meson configure
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://mesonbuild.com/Quick-guide.html
+
+sudo apt-get install python3 python3-pip python3-setuptools \
+                       python3-wheel ninja-build
+
+sudo pip3 install meson
+
+
+
+cd ..
+andrew@DESKTOP-NTQJ32B:/mnt/e/tmp/builddb$ git clone https://github.com/mesonbuild/meson.git
+
+
+
+
+python3 ./meson/meson.py
+
+
+
+
+
+
+
+
+
+
+python3 ../meson/meson.py setup -Dbuildtype=release build
+
+
+
+python3 ../meson/meson.py configure
+
+
+
+
+
+-Denable_debugger=heavy
+
+
+
+python3 ../meson/meson.py setup  --wipe build    
+
+
+
+python3 ../meson/meson.py setup  --wipe -Dbuildtype=release -Denable_debugger=heavy build
+
+
+
+
+
+
+
+
+
+
+
+                                                            rebuilding with a newer version of meson.
+andrew@DESKTOP-NTQJ32B:/mnt/e/tmp/builddb/dosbox-staging$ python3 ../meson/meson.py setup  --wipe -Dbuildtype=release -Denable_debugger=heavy build
+
+DESTDIR=/mnt/e/tmp/builddb/dbout/  python3 ../meson/meson.py  builddir --wipe -Dbuildtype=release -Denable_debugger=heavy
+
+
+
+ DESTDIR=/mnt/e/tmp/builddb/dbout/   python3 ../meson/meson.py install -C builddir
